@@ -1,0 +1,36 @@
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ebf2fa;
+    width: 100%;
+}
+
+a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(96, 165, 187);
+}
+
+.logo-Be-Safe {
+    width: 150px;
+    height: 150px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+@media (max-width: 480px){
+   
+ .logo-Be-Safe{
+    width: 150px;
+    height: 150px;
+ } 
+
+ h1{
+     font-size: large;
+ }
+}
