@@ -1,5 +1,8 @@
 import React from 'react';
+import ResultBubble from '/src/components/ResultBubble/ResultBubble'
+
 import './Body.css';
+
 import logo from './Be-Safe-logo.png';
 import carte from './carte.png';
 
@@ -40,9 +43,7 @@ export default function Body() {
                 <img id="map-result" src={carte} />
             </div>
             <div id="search-result">
-                <p>Cas détectés</p>
-                <p>Hospitalisations</p>
-                <p>Décès</p>
+                <ResultBubble />
             </div>
         </div>
     );
