@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import footerList from "./components/footerList"
 
 function App() {
   return (
