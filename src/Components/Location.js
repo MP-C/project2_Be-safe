@@ -2,9 +2,7 @@ import React from 'react';
 import { useMapEvents, Marker, Popup } from 'react-leaflet';
 
 
-function Location(){
-    return(
-        function LocationMarker() {
+        function Location() {
             const [position, setPosition] = React.useState(null)
             const map = useMapEvents({
               click() {
@@ -22,8 +20,6 @@ function Location(){
               </Marker>
             )
           }
-          
-    )
-};
+
 
 export default Location;
