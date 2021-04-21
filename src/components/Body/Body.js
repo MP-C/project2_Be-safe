@@ -1,12 +1,28 @@
-import React from 'react';
-import ResultBubble from '/src/components/ResultBubble/ResultBubble'
-
+import React, { useState, useEffect } from 'react';
+//  import axios from 'axios';
 import './Body.css';
 
 import logo from './Be-Safe-logo.png';
 import carte from './carte.png';
 
 export default function Body() {
+
+    const [city, setCity] = useState('');
+    
+    //  const getCovidDataPerCity = () => {
+        //  axios
+            //  .get('')
+            //  .then ((response) => response.data)
+            //  .then ((data) => {
+                //  setCity(data);
+            //  });
+    //  };
+    useEffect (() => {
+
+    }, [city]);
+
+    const [date, setDate] = useState('');
+
     return (
         <div id="body">
             <div id="column-left" className="column">
@@ -17,33 +33,44 @@ export default function Body() {
                     className="logo vertical-margin"
                 />
                 <div id="choose-geoloc-filter">
-                    <button id="geolocalisation" class="input bottom-margin">
+                    <button id="geolocalisation" className="button bottom-margin">
                         Se géolocaliser
                     </button>
                     <div id="input-filter" class="filter">
                         <input
                             name="city"
-                            class="input top-margin"
+                            className="input top-margin"
                             placeholder="Commune"
                             type="text"
+                            value={city} 
+                            onChange={(e) => setCity(e.target.value)}
                         />
                         <input
                             name="date"
-                            class="input top-margin"
+                            className="input top-margin"
                             placeholder="Date"
                             type="date"
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
                         />
-                        <button id="choose-city" class="input top-margin">
+                        <button id="choose-city" className="top-margin button bottom-margin">
                             Sélectionner une commune
                         </button>
+                        <div className={`selection ${city ? "selected" : ""}`}>
+                            <h4>Votre rercherche :</h4>
+                            <p> Ville : {city} </p>
+                            <p> Date : {date} </p>
+                        </div>                        
                     </div>
                 </div>
             </div>
-            <div id="column-right" class="map">
+            <div id="column-right" className="map">
                 <img id="map-result" src={carte} />
             </div>
             <div id="search-result">
-                <ResultBubble />
+                {
+                    // import React Leaflet
+                }
             </div>
         </div>
     );
