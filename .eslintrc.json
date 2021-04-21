@@ -10,6 +10,14 @@
     "sourceType": "module"
   },
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": [
+      "warn", 
+      {
+        "singleQuote": true,
+        "trailingComma": "none",
+        "tabWidth": 4
+      }
+    ]
+
   }
 }
