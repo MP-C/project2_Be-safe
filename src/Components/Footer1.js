@@ -7,7 +7,7 @@ import LogoSciensano from "./FooterLogo/LogoSciensano.png";
 export default function Footer() {
 
   return (
-    <div className="footer">
+    <div className="footer">gi
       <div className="footer_generalInformations">
         <h2 className="footer_title"> General Informations</h2>
         <div className="footer_contactsAndSites">
