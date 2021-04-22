@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Header.css';
 
-import logo from '/src/Components/assets/Be-Safe-Logo.png';
+import logo from 'Components/assets/Be-Safe-Logo.png';
 
 export default function Header() {
     return (

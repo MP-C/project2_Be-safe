@@ -2,9 +2,9 @@ import React from 'react';
 
 import './Footer.css';
 
-import LogoBe from '/src/Components/assets/LogoBe.png';
-import LogoBrusselsCovid from '/src/Components/assets/LogoBrusselsCovid.png';
-import LogoSciensano from '/src/Components/assets/LogoSciensano.png';
+import LogoBe from 'Components/assets/LogoBe.png';
+import LogoBrusselsCovid from 'Components/assets/LogoBrusselsCovid.png';
+import LogoSciensano from 'Components/assets/LogoSciensano.png';
 
 export default function Footer() {
     return (

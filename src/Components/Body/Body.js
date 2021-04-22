@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 //  import axios from 'axios';
 
-import Map from '/src/Components/Map/Map';
+import Map from 'Components/Map/Map';
 
 import './Body.css';
 
-import logo from '/src/Components/assets/Be-Safe-logo.png';
+import logo from 'Components/assets/Be-Safe-Logo.png';
 
 export default function Body() {
 
