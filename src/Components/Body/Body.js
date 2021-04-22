@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
 //  import axios from 'axios';
+
+import Map from '/src/Components/Map/Map';
+
 import './Body.css';
 
-import logo from './Be-Safe-logo.png';
-import carte from './carte.png';
+import logo from '/src/Components/assets/Be-Safe-logo.png';
 
 export default function Body() {
 
     const [city, setCity] = useState('');
-    
+
     //  const getCovidDataPerCity = () => {
-        //  axios
-            //  .get('')
-            //  .then ((response) => response.data)
-            //  .then ((data) => {
-                //  setCity(data);
-            //  });
+    //  axios
+    //  .get('')
+    //  .then ((response) => response.data)
+    //  .then ((data) => {
+    //  setCity(data);
+    //  });
     //  };
-    useEffect (() => {
+    useEffect(() => {
 
     }, [city]);
 
@@ -42,7 +44,7 @@ export default function Body() {
                             className="input top-margin"
                             placeholder="Commune"
                             type="text"
-                            value={city} 
+                            value={city}
                             onChange={(e) => setCity(e.target.value)}
                         />
                         <input
@@ -60,7 +62,7 @@ export default function Body() {
                             <h4>Votre rercherche :</h4>
                             <p> Ville : {city} </p>
                             <p> Date : {date} </p>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,9 +70,7 @@ export default function Body() {
                 <img id="map-result" src={carte} />
             </div>
             <div id="search-result">
-                {
-                    // import React Leaflet
-                }
+                <Map />
             </div>
         </div>
     );
