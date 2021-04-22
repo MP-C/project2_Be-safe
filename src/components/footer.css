@@ -5,41 +5,23 @@ Footer Mario
 
 .footer {
     display: flex;
+    justify-content: center;
     background-color: #A7C1CF;
-    height:auto;
-    width: auto;
 }
 
 .footer_generalInformations{
     display: flex;
     flex-direction: column;
     text-align: center;
-    height:auto;
-    width: auto;
-    margin:50px;
-    padding: auto;
 }
 
 .footer_contactsAndSites{
     display: flex;
-    flex-direction: row;
-    justify-content:space-between ;
-}
-
-.footer_ImportantesConstacts{
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    margin-left: 10px;
-    margin-right: 50px;
-    max-width: fit-content;   
-}
-
-.contactList{
-    display: flex;
     flex-direction: column;
-    flex:space-between;
-    text-align:justify;
+}
+
+.titleContactList, .titleSitesInformations, .footer_titleImportantesConstacts {
+    color: white;
 }
 
 .footer_SitesInformations{
@@ -50,24 +32,85 @@ Footer Mario
 
 .network_logos{
    display: flex;
-   margin-left: 100px;
-   justify-content: right;
 }
 
 .logo_contact_be_belgium{
     border-radius:40%;
-    min-width: 5%;
-    max-width: 15%;
+    width: 20%;
 }
 
 .logo_contact_be_brussels{
-    border-radius: 50%;
-    min-width: 10%;
-    max-width: 20%;
+    border-radius: 40%;
+    width: 20%;
 }
 
 .logo_contact_be_Sciensano{
     border-radius: 20%;
-    min-width:5%;
-    max-width: 30%;
+    width: 30%;
+}
+
+
+@media (min-width: 480px){
+    .footer_ImportantesConstacts{
+        text-align: center;
+    }
+    
+    .footer_titleImportantesConstacts, .footer_title {
+        font-size: large;
+    }
+    
+    .footer_SitesInformations{
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 700px){
+    .footer_contactsAndSites{
+        flex-direction: row;
+        align-items: baseline;
+    }
+    
+    .footer_SitesInformations{
+        display: none;
+        flex-direction:column;
+        justify-content:right;
+    }
+
+    .network_logos{
+       align-items: baseline;
+    }
+     
+     .logo_contact_be_belgium{
+         width: 40px;
+     }
+     
+     .logo_contact_be_brussels{
+         width: 70px;
+     }
+     
+     .logo_contact_be_Sciensano{
+         width: 50px;
+     }
+    
+}
+    
+    
+@media (min-width: 900px){
+    .footer_contactsAndSites{
+        flex-direction:row;
+        justify-content: space-between;
+    }
+
+    .footer_importantsContacts{
+        justify-content:left;
+    }
+
+    .titleContacts{
+        flex-direction:row;
+    }
+
+    .footer_SitesInformations{
+        align-items: flex-end;
+        justify-content:right;
+    }
 }
