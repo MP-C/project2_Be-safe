@@ -3,9 +3,12 @@ import './App.css';
 import Body from './Components/Body/Body';
 import Header from "./Components/Header";
 import Map from "./Components/Map";
+import Footer from "./components/Footer";
 
-function App() {
+  export default function App() {
+
   return (
+
     <div>
       <div className="App">
         <Body />
@@ -13,9 +16,8 @@ function App() {
       <div>
         <Header />
         <Map />
+        <Footer />
       </div>
     </div>
   );
-}
-
-export default App;
+  }

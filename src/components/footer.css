@@ -1,0 +1,73 @@
+/*
+general for all
+Footer Mario
+*/
+
+.footer {
+    display: flex;
+    background-color: #A7C1CF;
+    height:auto;
+    width: auto;
+}
+
+.footer_generalInformations{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height:auto;
+    width: auto;
+    margin:50px;
+    padding: auto;
+}
+
+.footer_contactsAndSites{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ;
+}
+
+.footer_ImportantesConstacts{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 50px;
+    max-width: fit-content;   
+}
+
+.contactList{
+    display: flex;
+    flex-direction: column;
+    flex:space-between;
+    text-align:justify;
+}
+
+.footer_SitesInformations{
+    display: flex;
+    flex-direction: column;
+    margin-left: 500px;
+}
+
+.network_logos{
+   display: flex;
+   margin-left: 100px;
+   justify-content: right;
+}
+
+.logo_contact_be_belgium{
+    border-radius:40%;
+    min-width: 5%;
+    max-width: 15%;
+}
+
+.logo_contact_be_brussels{
+    border-radius: 50%;
+    min-width: 10%;
+    max-width: 20%;
+}
+
+.logo_contact_be_Sciensano{
+    border-radius: 20%;
+    min-width:5%;
+    max-width: 30%;
+}
