@@ -11,9 +11,7 @@ export default function Header() {
                 <img className="logo-Be-Safe" src={logo} />
             </a>
 
-            <a href="index.js">
-                <h1>Statistiques Mesures Covid</h1>
-            </a>
+           
         </div>
     );
 }
