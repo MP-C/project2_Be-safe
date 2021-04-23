@@ -3,7 +3,7 @@ import './App.css';
 import Body from './Components/Body/Body';
 import Header from './Components/Header';
 import Map from './Components/Map';
-import Footer from './Components/Footer';
+import Footer from './Components/Footer1';
 
   export default function App() {
 
