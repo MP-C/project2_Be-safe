@@ -69,12 +69,13 @@ export default function Body() {
                     </div>
                 </div>
             </div>
+
             <div id="column-right" className="map">
-                <img id="map-result" />
-            </div>
-            <div id="search-result">
+                <div id="search-result">
                 <Map />
             </div>
+            </div>
+            
         </div>
     );
 }
