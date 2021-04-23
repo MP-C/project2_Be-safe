@@ -1,17 +1,17 @@
-import React from "react";
-import Header from "./Components/Header";
-import Map from "./Components/Map";
+import React from 'react';
 
-import "./App.css";
+import Header from './components/Header/Header';
+import Body from './components/Body/Body';
+import Footer from './components/Footer/Footer';
 
+import './App.css';
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <Map />
-    </div>
-  );
+export default function App() {
+    return (
+        <div className="App">
+            <Header />
+            <Body />
+            <Footer />
+        </div>
+    );
 }
-
-export default App;
