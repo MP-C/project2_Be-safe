@@ -2,9 +2,9 @@ import React from 'react';
 
 import './Footer.css';
 
-import LogoBe from 'Components/assets/LogoBe.png';
-import LogoBrusselsCovid from 'Components/assets/LogoBrusselsCovid.png';
-import LogoSciensano from 'Components/assets/LogoSciensano.png';
+import LogoBe from '../assets/LogoBe.png';
+import LogoBrusselsCovid from '../assets/LogoBrusselsCovid.png';
+import LogoSciensano from '../assets/LogoSciensano.png';
 
 export default function Footer() {
     return (
@@ -12,10 +12,16 @@ export default function Footer() {
             <div className="footer_generalInformations">
                 <h3 className="footer_title"> General Informations</h3>
                 <div className="footer_contactsAndSites">
-                    <div className="footer_importantsContacts" >
-                        <h5 className="footer_ImportantesConstactsTitle"> Importantes Contacts</h5>
-                        <h6 className="contactList">Call center Belgium: 0800/14.689 </h6>
-                        <h6 className="contactList">Call center Bruxelles : 0800/35.243 </h6>
+                    <div className="footer_importantsContacts">
+                        <h5 className="footer_ImportantesConstactsTitle">
+                            Contacts importants
+                        </h5>
+                        <h6 className="contactList">
+                            Call center Belgium: 0800/14.689
+                        </h6>
+                        <h6 className="contactList">
+                            Call center Bruxelles : 0800/35.243
+                        </h6>
                     </div>
                     <div calssName="footer_SitesInformations">
                         <h5>National Informations Sites</h5>

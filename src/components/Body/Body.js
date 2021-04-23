@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 //  import axios from 'axios';
 
-import Map from 'Components/Map/Map';
+import Map from '../Map/Map';
 
 import './Body.css';
 
-import logo from 'Components/assets/Be-Safe-Logo.png';
+import logo from '../assets/Be-Safe-Logo.png';
 
 export default function Body() {
-
     const [city, setCity] = useState('');
 
     //  const getCovidDataPerCity = () => {
@@ -19,9 +18,7 @@ export default function Body() {
     //  setCity(data);
     //  });
     //  };
-    useEffect(() => {
-
-    }, [city]);
+    useEffect(() => {}, [city]);
 
     const [date, setDate] = useState('');
 
@@ -35,7 +32,10 @@ export default function Body() {
                     className="logo vertical-margin"
                 />
                 <div id="choose-geoloc-filter">
-                    <button id="geolocalisation" className="button bottom-margin">
+                    <button
+                        id="geolocalisation"
+                        className="button bottom-margin"
+                    >
                         Se géolocaliser
                     </button>
                     <div id="input-filter" class="filter">
@@ -55,10 +55,13 @@ export default function Body() {
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
                         />
-                        <button id="choose-city" className="top-margin button bottom-margin">
+                        <button
+                            id="choose-city"
+                            className="top-margin button bottom-margin"
+                        >
                             Sélectionner une commune
                         </button>
-                        <div className={`selection ${city ? "selected" : ""}`}>
+                        <div className={`selection ${city ? 'selected' : ''}`}>
                             <h4>Votre rercherche :</h4>
                             <p> Ville : {city} </p>
                             <p> Date : {date} </p>
@@ -67,7 +70,7 @@ export default function Body() {
                 </div>
             </div>
             <div id="column-right" className="map">
-                <img id="map-result" src={carte} />
+                <img id="map-result" />
             </div>
             <div id="search-result">
                 <Map />

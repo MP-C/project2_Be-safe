@@ -20,5 +20,5 @@ export default function Map() {
                 <Location />
             </MapContainer>
         </div>
-    )
+    );
 }
