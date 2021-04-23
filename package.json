@@ -50,5 +50,15 @@
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1"
+<<<<<<< HEAD
   }
+=======
+  },
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "baseUrl": "src"
+  },
+    "include": ["src"]
+>>>>>>> dev
 }

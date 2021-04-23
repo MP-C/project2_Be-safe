@@ -1,20 +1,17 @@
 import React from 'react';
-import './App.css';
+
+import Header from './Components/Header/Header';
 import Body from './Components/Body/Body';
-import Header from './Components/Header';
-import Map from './Components/Map';
-import Footer from './Components/Footer';
+import Footer from './Components/Footer/Footer';
 
-  export default function App() {
+import './App.css';
 
-  return (
-    <div>
-      <div className="App">
-        <Header />
-        <Body />
-        <Map />
-        <Footer />
-      </div>
-    </div>
-  );
-  }
+export default function App() {
+    return (
+        <div className="App">
+            <Header />
+            <Body />
+            <Footer />
+        </div>
+    );
+}
