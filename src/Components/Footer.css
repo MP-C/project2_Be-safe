@@ -96,6 +96,10 @@ Footer Mario
     
     
 @media (min-width: 900px){
+    .footer_generalInformations{
+        justify-content: baseline;
+    }
+
     .footer_contactsAndSites{
         flex-direction:row;
         justify-content: space-between;
@@ -110,7 +114,5 @@ Footer Mario
     }
 
     .footer_SitesInformations{
-        align-items: flex-end;
-        justify-content:right;
     }
 }

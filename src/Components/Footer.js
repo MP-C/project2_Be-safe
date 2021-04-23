@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer1";
+import "./Footer.css";
 import LogoBe from "./FooterLogo/LogoBe.png";
 import LogoBrusselsCovid from "./FooterLogo/LogoBrusselsCovid.png";
 import LogoSciensano from "./FooterLogo/LogoSciensano.png";
@@ -7,7 +7,7 @@ import LogoSciensano from "./FooterLogo/LogoSciensano.png";
 export default function Footer() {
 
   return (
-    <div className="footer">gi
+    <div className="footer">
       <div className="footer_generalInformations">
         <h2 className="footer_title"> General Informations</h2>
         <div className="footer_contactsAndSites">
