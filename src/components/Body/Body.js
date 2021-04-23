@@ -18,7 +18,7 @@ export default function Body() {
     //  setCity(data);
     //  });
     //  };
-    useEffect(() => {}, [city]);
+    useEffect(() => { }, [city]);
 
     const [date, setDate] = useState('');
 
@@ -72,10 +72,10 @@ export default function Body() {
 
             <div id="column-right" className="map">
                 <div id="search-result">
-                <Map />
+                    <Map />
+                </div>
             </div>
-            </div>
-            
+
         </div>
     );
 }
