@@ -5,8 +5,6 @@ import Map from '../Map/Map';
 
 import './Body.css';
 
-import logo from '../assets/Be-Safe-Logo.png';
-
 export default function Body() {
     const [city, setCity] = useState('');
 
@@ -25,16 +23,10 @@ export default function Body() {
     return (
         <div id="body">
             <div id="column-left" className="column">
-                <img
-                    id="logo-BeSafe"
-                    src={logo}
-                    width="150px"
-                    className="logo vertical-margin"
-                />
                 <div id="choose-geoloc-filter">
                     <button
                         id="geolocalisation"
-                        className="button bottom-margin"
+                        className="button top-margin bottom-margin"
                     >
                         Se géolocaliser
                     </button>
