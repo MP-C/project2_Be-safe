@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 //  import axios from 'axios';
 
 import Map from '../Map/Map';
@@ -6,17 +6,21 @@ import Map from '../Map/Map';
 import './Body.css';
 
 export default function Body() {
-    const [city, setCity] = useState('');
+    const [covidCase, setCovidCase] = useState(null);
 
-    //  const getCovidDataPerCity = () => {
-    //  axios
-    //  .get('')
-    //  .then ((response) => response.data)
-    //  .then ((data) => {
-    //  setCity(data);
-    //  });
-    //  };
-    useEffect(() => { }, [city]);
+    const getCovidDataPerCity = () => {
+        fetch(
+            'https://data.opendatasoft.com/api/records/1.0/search/?dataset=covid-19-pandemic-belgium-cases-municipality%40public&q=&sort=date&facet=date&facet=nis5&facet=tx_descr_nl&facet=tx_descr_fr&facet=tx_adm_dstr_descr_nl&facet=tx_adm_dstr_descr_fr'
+        )
+            .then((response) => response.json())
+            .then( (data) => {
+                setCovidCase(data.records[0]);
+            });
+    };
+
+    //  useEffect(() => { }, [city]);
+
+    const [city, setCity] = useState('');
 
     const [date, setDate] = useState('');
 
@@ -30,7 +34,7 @@ export default function Body() {
                     >
                         Se géolocaliser
                     </button>
-                    <div id="input-filter" class="filter">
+                    <div id="input-filter" className="filter">
                         <input
                             name="city"
                             className="input top-margin"
@@ -50,6 +54,7 @@ export default function Body() {
                         <button
                             id="choose-city"
                             className="top-margin button bottom-margin"
+                            onClick={getCovidDataPerCity}
                         >
                             Sélectionner une commune
                         </button>
@@ -57,6 +62,12 @@ export default function Body() {
                             <h4>Votre rercherche :</h4>
                             <p> Ville : {city} </p>
                             <p> Date : {date} </p>
+                        </div>
+                        <div id="fetched-data-API-city">
+                            <p>{covidCase?.fields?.date}</p>
+                            <p>{covidCase?.fields?.region}</p>
+                            <p>{covidCase?.fields?.tx_descr_fr}</p>
+                            <p>{covidCase?.geometry?.coordinates}</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +78,6 @@ export default function Body() {
                     <Map />
                 </div>
             </div>
-
         </div>
     );
 }
