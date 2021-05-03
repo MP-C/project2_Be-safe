@@ -6,3 +6,7 @@ brussels coronavirus.brussels
 
 
 
+
+Information extra de presentation du site:
+Projet des étudiants de Wild Code School Brussels 2021ª, ce site permet consulter des infromations pertinentes et actuelles relatives
+à la Pandemie actuelle et existente depuis 2020 (COVID-19) via consumation d'une outsourching API (reference: ).
