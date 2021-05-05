@@ -14,8 +14,8 @@ export default function Footer() {
           <div className="footer_importantsContacts" >
             <h4 className="footer_titleImportantesConstacts"> Importantes Contacts</h4>
 
-            <h5 className="titleContactList">Call center Belgium: 0800/14.689</h5>
-            <h5 className="titleContactList">Call center Bruxelles : 0800/35.243</h5>
+            <p className="titleContactList">Call center Belgium: 0800/14.689</p>
+            <p className="titleContactList">Call center Bruxelles : 0800/35.243</p>
           </div>
           <div calssName="footer_SitesInformations">
             <h4 className="titleSitesInformations"> National Informations Sites</h4>
@@ -28,7 +28,7 @@ export default function Footer() {
               <a href="https://www.coronavirus.brussels">
                 <img className="logo_contact_be_brussels" src={LogoBrusselsCovid} alt="" />
               </a>
-
+              
               <a href="https://epistat.wiv-isp.be/covid/covid-19.html">
                 <img className="logo_contact_be_Sciensano" src={LogoSciensano} alt="" />
               </a>

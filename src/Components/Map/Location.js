@@ -25,8 +25,8 @@ function Location() {
         <div className="App">
             <button className="button" onClick={getLocation}>Géolocalisation</button>
             <p>{status}</p>
-            {lat && <p>Latitude: {lat}</p>}
-            {lng && <p>Longitude: {lng}</p>}
+            <p>Latitude: {lat}</p>
+            <p>Longitude: {lng}</p>
         </div>
     );
 }
