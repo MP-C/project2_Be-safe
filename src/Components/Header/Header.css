@@ -1,3 +1,8 @@
+.header_intro{
+    display: flex;
+    justify-content: space-between;
+}
+
 .banner-container {
     display: flex;
     flex-direction: column;
@@ -9,13 +14,24 @@
 a {
     margin-left: 20px;
     text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(96, 165, 187);
 }
  
 .logo-Be-Safe {
     width: 150px;
     height: 150px;
+}
+
+.headear_text{
+    display: flex;
+    flex-direction: column;
+    background-color:  #A7C1CF;
+    margin: 2em;   
+}
+
+.headear_text_presentation{
+    color:white;
+    font-family: Helvetica ;
 }
 
 h1 {
@@ -32,5 +48,9 @@ h1 {
 
  h1{
      font-size: large;
+ }
+
+.header_intro{
+    flex-direction: column;
  }
 }
