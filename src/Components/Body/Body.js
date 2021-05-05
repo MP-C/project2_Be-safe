@@ -1,16 +1,16 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import Location from '../Map/Location';
 import Map from '../Map/Map';
-
 import './Body.css';
 
-
 export default function Body() {
-    const [country, setCountry] = useState('');
-    const [covidCase, setCovidCase] = useState(null);
+    const [country, setCountry] = useState(''); 
+    const [covidCase, setCovidCase] = useState(null); 
+    const [lat, setLat] = useState(null); 
+    const [lng, setLng] = useState(null);
+    const [status, setStatus] = useState(null); 
 
-    const getCovidData = () => {
+    const getCovidData = () => { 
         axios
             .get('https://api.covid19api.com/summary')
             .then((response) => response.data)
@@ -23,12 +23,25 @@ export default function Body() {
         ? covidCase.find((item) => item.Country.includes(country))
         : null;
 
+    function getLocation() {
+        if (!navigator.geolocation) {
+            setStatus('Geolocation is not supported by your browser');
+        } else {
+            setStatus('Locating...');
+            navigator.geolocation.getCurrentPosition((position) => {
+                setStatus(null);
+                setLat(position.coords.latitude);
+                setLng(position.coords.longitude);
+            }, () => {
+                setStatus('Unable to retrieve your location');
+            });
+        }
+    }
+
     return (
         <div id="body">
             <div id="column-left" className="column">
-
                 <div id="choose-geoloc-filter">
-                    <Location />
                     <div id="input-filter" className="filter">
                         <input
                             name="pays"
@@ -46,11 +59,12 @@ export default function Body() {
                             Select country
                         </button>
                         {filteredCountry != null ? (
-                            <div 
+                            <div
                                 className={`selection ${country ? 'selected' : ''}`}
                                 id="fetched-data-API"
                             >
-                                <h4>Results for {filteredCountry?.Country}</h4>
+                                <h4>Results from {filteredCountry?.Country}</h4>
+                                <p>New recovesrs: {filteredCountry.NewRecovered}</p>
                                 <p>Total confirmed cases: {filteredCountry.TotalConfirmed}</p>
                                 <p>Total recovered persons: {filteredCountry.TotalRecovered}</p>
                                 <p>Total deaths: {filteredCountry.TotalDeaths}</p>
@@ -60,10 +74,13 @@ export default function Body() {
                     </div>
                 </div>
             </div>
-
             <div id="column-right" className="map">
                 <div id="search-result">
-                    <Map />
+                    <button className="button" onClick={getLocation}>Géolocalisation</button>
+                    <p>{status}</p>
+                    <p>Latitude: {lat}</p>
+                    <p>Longitude: {lng}</p>
+                    <Map lat={lat} lng={lng} />
                 </div>
             </div>
         </div>

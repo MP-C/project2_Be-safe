@@ -3,11 +3,14 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 
 import './Map.css';
 
-export default function Map() {
+export default function Map(lat,lng) {
+    const [center, setCenter] = React.useState('');
+    setCenter ([{lat},{lng}]);
+    
     return (
         <div>
             <MapContainer
-                center={{ lat: 51.789, lng: 4.355 }}
+                center={center}
                 zoom={13}
                 scrollWheelZoom={false}
             >
