@@ -20,7 +20,7 @@ export default function Body() {
     };
 
     const filteredCountry = covidCase
-        ? covidCase.find((item) => item.Country.includes(country))
+        ? covidCase.find((item) => item.Country.slice(0, country.lenght).includes(country))
         : null;
 
     function getLocation() {
@@ -64,7 +64,7 @@ export default function Body() {
                                 id="fetched-data-API"
                             >
                                 <h4>Results from {filteredCountry?.Country}</h4>
-                                <p>New recovesrs: {filteredCountry.NewRecovered}</p>
+                                <p>New recovers: {filteredCountry.NewRecovered}</p>
                                 <p>Total confirmed cases: {filteredCountry.TotalConfirmed}</p>
                                 <p>Total recovered persons: {filteredCountry.TotalRecovered}</p>
                                 <p>Total deaths: {filteredCountry.TotalDeaths}</p>
