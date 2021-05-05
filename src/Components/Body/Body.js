@@ -1,7 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Map from '../Map/Map';
+<<<<<<< HEAD
 // import Location from '../Map/Location';
+=======
+>>>>>>> e8aaa1931694f07aabfa6823d6264fa4c9c34972
 
 import './Body.css';
 
@@ -29,6 +32,8 @@ export default function Body() {
     const filteredCountry = covidCase
         ? covidCase.find((item) => item.Country.includes(country))
         : null;
+        
+        
 
     function getLocation() {
         if (!navigator.geolocation) {
