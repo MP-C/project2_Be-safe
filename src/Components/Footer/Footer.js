@@ -36,10 +36,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <h6 className="headear_text_identification">
+        <p className="headear_text_identification">
           This is our second project as students at Wild Code School Brussels campus.
           We were given the theme "Be-Safe" for this project and we developed the content,
-          putting in practice our skills learned in class about React.Js, consuming API's, HTML and CSS. </h6>
+          putting in practice our skills learned in class about React.Js, consuming API's, HTML and CSS. </p>
       </div>
     </div>
   )

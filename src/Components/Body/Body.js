@@ -21,6 +21,8 @@ export default function Body() {
     const filteredCountry = covidCase
         ? covidCase.find((item) => item.Country.includes(country))
         : null;
+        
+        
 
     return (
         <div id="body">
