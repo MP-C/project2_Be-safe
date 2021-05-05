@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import Location from '../Map/Location';
 import Map from '../Map/Map';
 import './Body.css';
+
 
 export default function Body() {
     const [country, setCountry] = useState('');
@@ -24,12 +26,7 @@ export default function Body() {
         <div id="body">
             <div id="column-left" className="column">
                 <div id="choose-geoloc-filter">
-                    <button
-                        id="geolocalisation"
-                        className="button top-margin bottom-margin"
-                    >
-                        Get localized
-                    </button>
+                    <Location />
                     <div id="input-filter" className="filter">
                         <input
                             name="pays"
