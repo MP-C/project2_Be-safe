@@ -34,7 +34,7 @@ Footer Mario
 .network_logos{
    display: flex;
    flex-direction: column;
-    justify-content: center;
+   justify-content: space-around;
 }
  
 .logo_contact_be_belgium{
@@ -53,14 +53,16 @@ Footer Mario
 }
  
 .headear_text_identification{
-    justify-content: center;
+    text-align: center;
     color: white;
     font-family: Helvetica;
     background-color: rgb(6, 102, 140);
     margin:auto;
+    padding: 20px;
+    
 }
 
-@media (min-width: 480px){
+@media (max-width: 480px){
     .footer_ImportantesConstacts{
         text-align: center;
     }
@@ -74,21 +76,25 @@ Footer Mario
     }    
     
     .network_logos{
-        flex-direction: row ;
-        justify-content: center;
+        flex-direction: column ;
         justify-content: space-between;
     }
     
     .logo_contact_be_belgium{
-        width: 40px;
+        width: 50px;
+        margin: 15px;
     }
 
     .logo_contact_be_brussels{
-        width: 70px;
+        width: 80px;
+        margin: 15px;
+
     }
 
     .logo_contact_be_Sciensano{
-        width: 50px;
+        width: 60px;
+        margin: 15px;
+
     }
 }
  
