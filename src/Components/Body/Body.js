@@ -1,13 +1,21 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import Location from '../Map/Location';
+import React, { useEffect, useState } from 'react';
 import Map from '../Map/Map';
+// import Location from '../Map/Location';
+
 import './Body.css';
 
 
 export default function Body() {
     const [country, setCountry] = useState('');
     const [covidCase, setCovidCase] = useState(null);
+    const [lat, setLat] = useState(50.8388);
+    const [lng, setLng] = useState(4.35);
+    const [status, setStatus] = useState(null);
+
+    useEffect(()=>{
+
+    },[lat])
 
     const getCovidData = () => {
         axios
@@ -22,12 +30,32 @@ export default function Body() {
         ? covidCase.find((item) => item.Country.includes(country))
         : null;
 
+    function getLocation() {
+        if (!navigator.geolocation) {
+            setStatus('Geolocation is not supported by your browser');
+        } else {
+            setStatus('Locating...');
+            navigator.geolocation.getCurrentPosition((position) => {
+                setStatus(null);
+                setLat(position.coords.latitude);
+                setLng(position.coords.longitude);
+            }, () => {
+                setStatus('Unable to retrieve your location');
+            });
+        }
+    }
+
     return (
         <div id="body">
             <div id="column-left" className="column">
 
                 <div id="choose-geoloc-filter">
-                    <Location />
+                    <div>
+                        <button className="top-margin button bottom-margin" onClick={getLocation}>Géolocalisation</button>
+                        <p>{status}</p>
+                        <p>Latitude: {lat}</p>
+                        <p>Longitude: {lng}</p>
+                    </div>
                     <div id="input-filter" className="filter">
                         <input
                             name="pays"
@@ -45,7 +73,7 @@ export default function Body() {
                             Select country
                         </button>
                         {filteredCountry != null ? (
-                            <div 
+                            <div
                                 className={`selection ${country ? 'selected' : ''}`}
                                 id="fetched-data-API"
                             >
@@ -62,7 +90,10 @@ export default function Body() {
 
             <div id="column-right" className="map">
                 <div id="search-result">
-                    <Map />
+                    <Map
+                        lat = {lat}
+                        lng=  {lng}
+                    />
                 </div>
             </div>
         </div>
