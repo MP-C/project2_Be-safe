@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
-//  import axios from 'axios';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 import Map from '../Map/Map';
 
 import './Body.css';
 
 export default function Body() {
-    const [covidCase, setCovidCase] = useState(null);
 
-    const getCovidDataPerCity = () => {
-        fetch(
-            'https://data.opendatasoft.com/api/records/1.0/search/?dataset=covid-19-pandemic-belgium-cases-municipality%40public&q=&sort=date&facet=date&facet=nis5&facet=tx_descr_nl&facet=tx_descr_fr&facet=tx_adm_dstr_descr_nl&facet=tx_adm_dstr_descr_fr'
-        )
-            .then((response) => response.json())
-            .then( (data) => {
-                setCovidCase(data.records[0]);
-            });
-    };
+    const [covidCase, setCovidCase] = useState([]);
 
-    //  useEffect(() => { }, [city]);
+    const getCovidData = useEffect(() => {
+        axios
+            .get('https://api.covid19api.com/summary')
+            .then((response) => response.data) 
+            .then((data) => {
+                setCovidCase(console.log(data.Countries));
+            })
+        }, []);
 
-    const [city, setCity] = useState('');
+    // [{Country:xxx}, {Country:XXX}].filter(e=>e.country.includes(country))
+
+    const [country, setCountry] = useState('');
 
     const [date, setDate] = useState('');
 
@@ -36,12 +36,12 @@ export default function Body() {
                     </button>
                     <div id="input-filter" className="filter">
                         <input
-                            name="city"
+                            name="pays"
                             className="input top-margin"
-                            placeholder="Commune"
+                            placeholder="Pays"
                             type="text"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
+                            value={country}
+                            onChange={(e) => setCountry(e.target.value)}
                         />
                         <input
                             name="date"
@@ -52,22 +52,24 @@ export default function Body() {
                             onChange={(e) => setDate(e.target.value)}
                         />
                         <button
-                            id="choose-city"
+                            id="choose-country"
                             className="top-margin button bottom-margin"
-                            onClick={getCovidDataPerCity}
+                            onClick={getCovidData}
                         >
-                            Sélectionner une commune
+                            Sélectionner un pays
                         </button>
-                        <div className={`selection ${city ? 'selected' : ''}`}>
+                        <div className={`selection ${country ? 'selected' : ''}`}>
                             <h4>Votre rercherche :</h4>
-                            <p> Ville : {city} </p>
+                            <p> Pays: {country} </p>
                             <p> Date : {date} </p>
                         </div>
-                        <div id="fetched-data-API-city">
-                            <p>{covidCase?.fields?.date}</p>
-                            <p>{covidCase?.fields?.region}</p>
-                            <p>{covidCase?.fields?.tx_descr_fr}</p>
-                            <p>{covidCase?.geometry?.coordinates}</p>
+                        <div id="fetched-data-API">
+                            <p>{console.log(covidCase)}</p>
+                            <p>{covidCase?.Country}</p>
+                            <p>{covidCase?.Date}</p>
+                            <p>{covidCase?.TotalConfirmed}</p>
+                            <p>{covidCase?.TotalRecovered}</p>
+                            <p>{covidCase?.TotalDeaths}</p>
                         </div>
                     </div>
                 </div>
