@@ -4,9 +4,6 @@ belgium (info-coronavirus.be)
 
 brussels coronavirus.brussels
 
+This site alows you to consult any information about COVID-19 statistics developpement around the world. It uses outsourcing free API, to identify the lastest news (total deaths, total recovered and total contaminations confirmed).
 
-
-
-Information extra de presentation du site:
-Projet des étudiants de Wild Code School Brussels 2021ª, ce site permet consulter des infromations pertinentes et actuelles relatives
-à la Pandemie actuelle et existente depuis 2020 (COVID-19) via consumation d'une outsourching API (reference: ).
+This is our second project as students at Wild Code School Brussels campus. We were given the theme "Be-Safe" for this project and we developed the content, putting in practice our skills learned in class about React.Js, consuming API's, HTML and CSS.
