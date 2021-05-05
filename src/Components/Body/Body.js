@@ -1,28 +1,24 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-
+import React, { useState } from 'react';
 import Map from '../Map/Map';
-
 import './Body.css';
 
 export default function Body() {
+    const [country, setCountry] = useState('');
+    const [covidCase, setCovidCase] = useState(null);
 
-    const [covidCase, setCovidCase] = useState([]);
-
-    const getCovidData = useEffect(() => {
+    const getCovidData = () => {
         axios
             .get('https://api.covid19api.com/summary')
-            .then((response) => response.data) 
+            .then((response) => response.data)
             .then((data) => {
-                setCovidCase(console.log(data.Countries));
-            })
-        }, []);
+                setCovidCase(data.Countries);
+            });
+    };
 
-    // [{Country:xxx}, {Country:XXX}].filter(e=>e.country.includes(country))
-
-    const [country, setCountry] = useState('');
-
-    const [date, setDate] = useState('');
+    const filteredCountry = covidCase
+        ? covidCase.find((item) => item.Country.includes(country))
+        : null;
 
     return (
         <div id="body">
@@ -32,45 +28,36 @@ export default function Body() {
                         id="geolocalisation"
                         className="button top-margin bottom-margin"
                     >
-                        Se géolocaliser
+                        Get localized
                     </button>
                     <div id="input-filter" className="filter">
                         <input
                             name="pays"
                             className="input top-margin"
-                            placeholder="Pays"
+                            placeholder="Country"
                             type="text"
                             value={country}
                             onChange={(e) => setCountry(e.target.value)}
-                        />
-                        <input
-                            name="date"
-                            className="input top-margin"
-                            placeholder="Date"
-                            type="date"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
                         />
                         <button
                             id="choose-country"
                             className="top-margin button bottom-margin"
                             onClick={getCovidData}
                         >
-                            Sélectionner un pays
+                            Select country
                         </button>
-                        <div className={`selection ${country ? 'selected' : ''}`}>
-                            <h4>Votre rercherche :</h4>
-                            <p> Pays: {country} </p>
-                            <p> Date : {date} </p>
-                        </div>
-                        <div id="fetched-data-API">
-                            <p>{console.log(covidCase)}</p>
-                            <p>{covidCase?.Country}</p>
-                            <p>{covidCase?.Date}</p>
-                            <p>{covidCase?.TotalConfirmed}</p>
-                            <p>{covidCase?.TotalRecovered}</p>
-                            <p>{covidCase?.TotalDeaths}</p>
-                        </div>
+                        {filteredCountry != null ? (
+                            <div 
+                                className={`selection ${country ? 'selected' : ''}`}
+                                id="fetched-data-API"
+                            >
+                                <h4>Results for {filteredCountry?.Country}</h4>
+                                <p>Total confirmed cases: {filteredCountry.TotalConfirmed}</p>
+                                <p>Total recovered persons: {filteredCountry.TotalRecovered}</p>
+                                <p>Total deaths: {filteredCountry.TotalDeaths}</p>
+                            </div>
+                        ) : null
+                        }
                     </div>
                 </div>
             </div>

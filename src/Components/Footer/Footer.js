@@ -20,7 +20,7 @@ export default function Footer() {
                 <h5 className="titleContactList">Call center Bruxelles : 0800/35.243</h5>
               </div>
             </div>
-            <div calssName="footer_SitesInformations">
+            <div className="footer_SitesInformations">
               <h4 className="titleSitesInformations"> National Informations Sites</h4>
               <div className="network_logos">
                   <div>
