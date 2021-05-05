@@ -1,0 +1,16 @@
+.button {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #427AA1;
+    border-style: solid;
+    border-color: #06668C;
+    border-width: 2px;
+    color: #EBF2FA;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}

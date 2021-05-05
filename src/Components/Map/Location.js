@@ -1,20 +1,34 @@
-import React from 'react';
-import { useMapEvents, Marker, Popup } from 'react-leaflet';
+import React, { useState } from 'react';
+import './Location.css';
 
-export default function Location() {
-    const [position, setPosition] = React.useState(null)
-    const map = useMapEvents({
-        click() {
-            map.locate()
-        },
-        locationfound(e) {
-            setPosition(e.latlng)
-            map.flyTo(e.latlng, map.getZoom())
-        },
-    });
-    return position === null ? null : (
-        <Marker position={position}>
-            <Popup>You are here</Popup>
-        </Marker>
-    )
+function Location() {
+    const [lat, setLat] = useState(null);
+    const [lng, setLng] = useState(null);
+    const [status, setStatus] = useState(null);
+
+    function getLocation() {
+        if (!navigator.geolocation) {
+            setStatus('Geolocation is not supported by your browser');
+        } else {
+            setStatus('Locating...');
+            navigator.geolocation.getCurrentPosition((position) => {
+                setStatus(null);
+                setLat(position.coords.latitude);
+                setLng(position.coords.longitude);
+            }, () => {
+                setStatus('Unable to retrieve your location');
+            });
+        }
+    }
+
+    return (
+        <div className="App">
+            <button className="button" onClick={getLocation}>Géolocalisation</button>
+            <p>{status}</p>
+            {lat && <p>Latitude: {lat}</p>}
+            {lng && <p>Longitude: {lng}</p>}
+        </div>
+    );
 }
+
+export default Location;
