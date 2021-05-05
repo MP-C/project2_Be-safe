@@ -1,74 +1,60 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-//  import axios from 'axios';
-
+import Location from '../Map/Location';
 import Map from '../Map/Map';
-
 import './Body.css';
 
+
 export default function Body() {
+    const [country, setCountry] = useState('');
     const [covidCase, setCovidCase] = useState(null);
 
-    const getCovidDataPerCity = () => {
-        fetch(
-            'https://data.opendatasoft.com/api/records/1.0/search/?dataset=covid-19-pandemic-belgium-cases-municipality%40public&q=&sort=date&facet=date&facet=nis5&facet=tx_descr_nl&facet=tx_descr_fr&facet=tx_adm_dstr_descr_nl&facet=tx_adm_dstr_descr_fr'
-        )
-            .then((response) => response.json())
-            .then( (data) => {
-                setCovidCase(data.records[0]);
+    const getCovidData = () => {
+        axios
+            .get('https://api.covid19api.com/summary')
+            .then((response) => response.data)
+            .then((data) => {
+                setCovidCase(data.Countries);
             });
     };
 
-    //  useEffect(() => { }, [city]);
-
-    const [city, setCity] = useState('');
-
-    const [date, setDate] = useState('');
+    const filteredCountry = covidCase
+        ? covidCase.find((item) => item.Country.includes(country))
+        : null;
 
     return (
         <div id="body">
             <div id="column-left" className="column">
                 <div id="choose-geoloc-filter">
-                    <button
-                        id="geolocalisation"
-                        className="button top-margin bottom-margin"
-                    >
-                        Se géolocaliser
-                    </button>
+                    <Location />
                     <div id="input-filter" className="filter">
                         <input
-                            name="city"
+                            name="pays"
                             className="input top-margin"
-                            placeholder="Commune"
+                            placeholder="Country"
                             type="text"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                        />
-                        <input
-                            name="date"
-                            className="input top-margin"
-                            placeholder="Date"
-                            type="date"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
+                            value={country}
+                            onChange={(e) => setCountry(e.target.value)}
                         />
                         <button
-                            id="choose-city"
+                            id="choose-country"
                             className="top-margin button bottom-margin"
-                            onClick={getCovidDataPerCity}
+                            onClick={getCovidData}
                         >
-                            Sélectionner une commune
+                            Select country
                         </button>
-                        <div className={`selection ${city ? 'selected' : ''}`}>
-                            <h4>Votre rercherche :</h4>
-                            <p> Ville : {city} </p>
-                            <p> Date : {date} </p>
-                        </div>
-                        <div id="fetched-data-API-city">
-                            <p>{covidCase?.fields?.date}</p>
-                            <p>{covidCase?.fields?.region}</p>
-                            <p>{covidCase?.fields?.tx_descr_fr}</p>
-                            <p>{covidCase?.geometry?.coordinates}</p>
-                        </div>
+                        {filteredCountry != null ? (
+                            <div 
+                                className={`selection ${country ? 'selected' : ''}`}
+                                id="fetched-data-API"
+                            >
+                                <h4>Results for {filteredCountry?.Country}</h4>
+                                <p>Total confirmed cases: {filteredCountry.TotalConfirmed}</p>
+                                <p>Total recovered persons: {filteredCountry.TotalRecovered}</p>
+                                <p>Total deaths: {filteredCountry.TotalDeaths}</p>
+                            </div>
+                        ) : null
+                        }
                     </div>
                 </div>
             </div>
