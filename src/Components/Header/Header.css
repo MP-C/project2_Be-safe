@@ -1,11 +1,6 @@
-.header_intro{
-    display: flex;
-    justify-content: space-between;
-}
-
 .banner-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     background-color: #A7C1CF;
     width: 100%;
@@ -22,11 +17,12 @@ a {
     height: 150px;
 }
 
-.headear_text{
+.header_text{
     display: flex;
-    flex-direction: column;
-    background-color:  #A7C1CF;
-    margin: 2em;   
+    flex-direction: row-reverse;
+    background-color:  #A7C1CF;  
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
 .headear_text_presentation{
@@ -36,6 +32,10 @@ a {
 
 h1 {
     text-align: center;
+}
+
+.info-button {
+    align-self: flex-start;
 }
 
 
@@ -51,6 +51,7 @@ h1 {
  }
 
 .header_intro{
+    display: flex;
     flex-direction: column;
  }
 }
