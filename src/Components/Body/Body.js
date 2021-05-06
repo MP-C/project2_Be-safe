@@ -1,11 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Map from '../Map/Map';
-<<<<<<< HEAD
-// import Location from '../Map/Location';
-=======
->>>>>>> e8aaa1931694f07aabfa6823d6264fa4c9c34972
-
 import './Body.css';
 
 
@@ -15,10 +10,6 @@ export default function Body() {
     const [lat, setLat] = useState(50.8388);
     const [lng, setLng] = useState(4.35);
     const [status, setStatus] = useState(null);
-
-    useEffect(()=>{
-
-    },[lat])
 
     const getCovidData = () => {
         axios
