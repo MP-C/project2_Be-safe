@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 
-=======
-import React from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
->>>>>>> e8aaa1931694f07aabfa6823d6264fa4c9c34972
 import './Map.css';
 
 export default function Map({ lat, lng }) {
