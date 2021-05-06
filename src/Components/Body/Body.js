@@ -1,10 +1,9 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Map from '../Map/Map';
-// import Location from '../Map/Location';
-
 import './Body.css';
 
+const crg = require('country-reverse-geocoding').country_reverse_geocoding();
 
 export default function Body() {
     const [country, setCountry] = useState('');
@@ -13,48 +12,61 @@ export default function Body() {
     const [lng, setLng] = useState(4.35);
     const [status, setStatus] = useState(null);
 
-    useEffect(()=>{
-
-    },[lat])
-
     const getCovidData = () => {
         axios
-            .get('https://api.covid19api.com/summary')
+            .get(
+                `https://api.covid19api.com/live/country/${country}/status/confirmed`
+            )
             .then((response) => response.data)
             .then((data) => {
-                setCovidCase(data.Countries);
+                setCovidCase(data[0]);
+                setLat(data[0].Lat);
+                setLng(data[0].Lon);
             });
     };
 
-    const filteredCountry = covidCase
-        ? covidCase.find((item) => item.Country.includes(country))
-        : null;
+    const findCountry = crg.get_country(lat, lng);
+
+    const [countryToLowerCase] = useState(findCountry.name.toLowerCase());
 
     function getLocation() {
         if (!navigator.geolocation) {
             setStatus('Geolocation is not supported by your browser');
         } else {
             setStatus('Locating...');
-            navigator.geolocation.getCurrentPosition((position) => {
-                setStatus(null);
-                setLat(position.coords.latitude);
-                setLng(position.coords.longitude);
-            }, () => {
-                setStatus('Unable to retrieve your location');
-            });
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    setStatus(null);
+                    setLat(position.coords.latitude);
+                    setLng(position.coords.longitude);
+                },
+                () => {
+                    setStatus('Unable to retrieve your location');
+                }
+            );
         }
+        axios
+            .get(
+                `https://api.covid19api.com/live/country/${countryToLowerCase}/status/confirmed`
+            )
+            .then((response) => response.data)
+            .then((data) => {
+                setCovidCase(data[0]);
+            });
     }
 
     return (
         <div id="body">
             <div id="column-left" className="column">
-
                 <div id="choose-geoloc-filter">
                     <div>
-                        <button className="top-margin button bottom-margin" onClick={getLocation}>Géolocalisation</button>
+                        <button
+                            className="top-margin button bottom-margin"
+                            onClick={getLocation}
+                        >
+                            Get localized
+                        </button>
                         <p>{status}</p>
-                        <p>Latitude: {lat}</p>
-                        <p>Longitude: {lng}</p>
                     </div>
                     <div id="input-filter" className="filter">
                         <input
@@ -72,28 +84,30 @@ export default function Body() {
                         >
                             Select country
                         </button>
-                        {filteredCountry != null ? (
+                        {covidCase != null ? (
                             <div
-                                className={`selection ${country ? 'selected' : ''}`}
+                                className={`selection ${
+                                    country || countryToLowerCase
+                                        ? 'selected'
+                                        : ''
+                                }`}
                                 id="fetched-data-API"
                             >
-                                <h4>Results for {filteredCountry?.Country}</h4>
-                                <p>Total confirmed cases: {filteredCountry.TotalConfirmed}</p>
-                                <p>Total recovered persons: {filteredCountry.TotalRecovered}</p>
-                                <p>Total deaths: {filteredCountry.TotalDeaths}</p>
+                                <h4>
+                                    Results for {covidCase?.Country} for today
+                                </h4>
+                                <p>Confirmed cases: {covidCase.Confirmed}</p>
+                                <p>Recovered persons: {covidCase.Recovered}</p>
+                                <p>Deaths: {covidCase.Deaths}</p>
                             </div>
-                        ) : null
-                        }
+                        ) : null}
                     </div>
                 </div>
             </div>
 
             <div id="column-right" className="map">
                 <div id="search-result">
-                    <Map
-                        lat = {lat}
-                        lng=  {lng}
-                    />
+                    <Map lat={lat} lng={lng} />
                 </div>
             </div>
         </div>
