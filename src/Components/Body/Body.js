@@ -4,13 +4,13 @@ import Map from '../Map/Map';
 import './Body.css';
 
 export default function Body() {
-    const [country, setCountry] = useState(''); 
-    const [covidCase, setCovidCase] = useState(null); 
-    const [lat, setLat] = useState(null); 
+    const [country, setCountry] = useState('');
+    const [covidCase, setCovidCase] = useState(null);
+    const [lat, setLat] = useState(null);
     const [lng, setLng] = useState(null);
-    const [status, setStatus] = useState(null); 
+    const [status, setStatus] = useState(null);
 
-    const getCovidData = () => { 
+    const getCovidData = () => {
         axios
             .get('https://api.covid19api.com/summary')
             .then((response) => response.data)
@@ -42,7 +42,15 @@ export default function Body() {
         <div id="body">
             <div id="column-left" className="column">
                 <div id="choose-geoloc-filter">
+                            <div id="search-result">
+                                <button className="button" onClick={getLocation}>Géolocalisation</button>
+                                <p>{status}</p>
+                                <p>Latitude: {lat}</p>
+                                <p>Longitude: {lng}</p>
+                            </div>
                     <div id="input-filter" className="filter">
+                        <div id="column-right" className="map">
+                        </div>
                         <input
                             name="pays"
                             className="input top-margin"
@@ -74,15 +82,7 @@ export default function Body() {
                     </div>
                 </div>
             </div>
-            <div id="column-right" className="map">
-                <div id="search-result">
-                    <button className="button" onClick={getLocation}>Géolocalisation</button>
-                    <p>{status}</p>
-                    <p>Latitude: {lat}</p>
-                    <p>Longitude: {lng}</p>
-                    <Map lat={lat} lng={lng} />
-                </div>
-            </div>
+            <Map lat={lat} lng={lng} />
         </div>
     );
 }
