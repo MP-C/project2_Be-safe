@@ -2,148 +2,107 @@
 general for all
 Footer Mario
 */
- 
+
 .footer {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     background-color: #A7C1CF;
 }
- 
-.footer_generalInformations{
+
+/* .footer_generalInformations{
     display: flex;
     flex-direction: column;
     text-align: center;
-}
- 
-.footer_contactsAndSites{
+} */
+
+.footer_contactsAndSites {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    padding-bottom: 20px;
 }
- 
+
+.footer_title{
+    color:rgb(6, 102, 140);
+}
+
 .titleContactList, .titleSitesInformations, .footer_titleImportantesConstacts {
-    color: white;
+    color: rgb(6, 102, 140);
 }
- 
-.footer_SitesInformations{
+
+.footer_SitesInformations {
     display: flex;
     flex-direction: column;
-    margin-left: 500px;
 }
- 
-.network_logos{
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
+
+.network_logos {
+    display: flex;
+    justify-content: center;
+
 }
- 
-.logo_contact_be_belgium{
-    margin: 25px;
-    width: 40%;
+
+.logo_contact_be_belgium {
+    height: 80px;
+    border-radius: 5px;
 }
- 
-.logo_contact_be_brussels{
-    margin: 25px;
-    width: 40%;
+
+.logo_contact_be_brussels {
+    height: 80px;
+    border-radius: 5px;
 }
- 
-.logo_contact_be_Sciensano{
-    margin: 25px;
-    width: 40%;
+
+.logo_contact_be_Sciensano {
+    height: 80px;
+    border-radius: 5px;
 }
- 
-.headear_text_identification{
+
+.headear_text_identification {
     text-align: center;
     color: white;
     font-family: Helvetica;
     background-color: rgb(6, 102, 140);
-    margin:auto;
+    margin: auto;
     padding: 20px;
 }
 
-@media (max-width: 480px){
-    .footer_ImportantesConstacts{
+@media (max-width: 480px) {
+    .footer_ImportantesConstacts {
         text-align: center;
     }
- 
     .footer_titleImportantesConstacts, .footer_title {
         font-size: large;
     }
- 
-    .footer_SitesInformations{
+    .footer_SitesInformations {
         flex-direction: row;
-    }    
-    
-    .network_logos{
-        flex-direction: column ;
-        justify-content: space-between;
     }
-    
-    .logo_contact_be_belgium{
-
-        width: 40px;
-        margin-top: 10em;
+    .network_logos {
+        flex-direction: column;
     }
-
-    .logo_contact_be_brussels{
-        width: 80px;
+    .logo_contact_be_belgium {
+        margin: 2rem;
+    }
+    .logo_contact_be_brussels {
+        margin: 2rem;
+    }
+    .logo_contact_be_Sciensano {
         margin: 15px;
-
-    }
-
-    .logo_contact_be_Sciensano{
-        width: 60px;
-        margin: 15px;
-
     }
 }
- 
-@media (min-width: 700px){
-    .footer_contactsAndSites{
+
+@media (max-width: 700px) {
+    .footer_contactsAndSites {
         flex-direction: row;
         align-items: baseline;
     }
- 
-    .footer_SitesInformations{
+    .footer_SitesInformations {
         display: none;
-        flex-direction:column;
-        justify-content:right;
+        flex-direction: column;
+        justify-content: right;
     }
- 
-    .network_logos{
-       align-items: baseline;
+    .network_logos {
+        align-items: baseline;
     }
- 
-     .logo_contact_be_belgium{
-         width: 40px;
-     }
- 
-     .logo_contact_be_brussels{
-         width: 70px;
-     }
- 
-     .logo_contact_be_Sciensano{
-         width: 50px;
-     }
- 
-}
- 
- 
-@media (min-width: 900px){
-    .footer_generalInformations{
-        justify-content: baseline;
-    }
- 
-    .footer_contactsAndSites{
-        flex-direction:row;
-        justify-content: space-around;
-    }
- 
-    .footer_importantsContacts{
-        justify-content:left;
-    }
- 
-    .titleContacts{
-        flex-direction:row;
-    }
+    .logo_contact_be_belgium {}
+    .logo_contact_be_brussels {}
+    .logo_contact_be_Sciensano {}
 }

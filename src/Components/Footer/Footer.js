@@ -8,12 +8,12 @@ export default function Footer() {
     return (
         <div className="footer">
             <div className="footer_generalInformations">
-                <h2 className="footer_title"> General Informations</h2>
+                <h1 className="footer_title"> General Informations</h1>
                 <div className="footer_contactsAndSites">
                     <div className="footer_importantsContacts">
-                        <h4 className="footer_titleImportantesConstacts">
+                        <h3 className="footer_titleImportantesConstacts">
                             Importants contacts
-                        </h4>
+                        </h3>
                         <p className="titleContactList">
                             Call center Belgium: 0800/14.689
                         </p>
@@ -22,9 +22,9 @@ export default function Footer() {
                         </p>
                     </div>
                     <div calssName="footer_SitesInformations">
-                        <h4 className="titleSitesInformations">
+                        <h3 className="titleSitesInformations">
                             National Informations Sites
-                        </h4>
+                        </h3>
                         <div className="network_logos">
                             <a href="https://www.info-coronavirus.be">
                                 <img
