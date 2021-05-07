@@ -38,18 +38,18 @@ Footer Mario
 }
  
 .logo_contact_be_belgium{
-    border-radius:40%;
-    width: 20%;
+    margin: 25px;
+    width: 40%;
 }
  
 .logo_contact_be_brussels{
-    border-radius: 40%;
-    width: 20%;
+    margin: 25px;
+    width: 40%;
 }
  
 .logo_contact_be_Sciensano{
-    border-radius: 20%;
-    width: 30%;
+    margin: 25px;
+    width: 40%;
 }
  
 .headear_text_identification{
@@ -59,7 +59,6 @@ Footer Mario
     background-color: rgb(6, 102, 140);
     margin:auto;
     padding: 20px;
-    
 }
 
 @media (max-width: 480px){
@@ -81,8 +80,9 @@ Footer Mario
     }
     
     .logo_contact_be_belgium{
-        width: 50px;
-        margin: 15px;
+
+        width: 40px;
+        margin-top: 10em;
     }
 
     .logo_contact_be_brussels{
