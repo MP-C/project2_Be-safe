@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/wild-covid/static/css/main.8a67c586.chunk.css",
-    "main.js": "/wild-covid/static/js/main.a2554b90.chunk.js",
-    "main.js.map": "/wild-covid/static/js/main.a2554b90.chunk.js.map",
-    "runtime-main.js": "/wild-covid/static/js/runtime-main.cfa95383.js",
-    "runtime-main.js.map": "/wild-covid/static/js/runtime-main.cfa95383.js.map",
-    "static/css/2.23154d62.chunk.css": "/wild-covid/static/css/2.23154d62.chunk.css",
-    "static/js/2.a1373370.chunk.js": "/wild-covid/static/js/2.a1373370.chunk.js",
-    "static/js/2.a1373370.chunk.js.map": "/wild-covid/static/js/2.a1373370.chunk.js.map",
-    "static/js/3.6aa0754a.chunk.js": "/wild-covid/static/js/3.6aa0754a.chunk.js",
-    "static/js/3.6aa0754a.chunk.js.map": "/wild-covid/static/js/3.6aa0754a.chunk.js.map",
-    "index.html": "/wild-covid/index.html",
-    "static/css/2.23154d62.chunk.css.map": "/wild-covid/static/css/2.23154d62.chunk.css.map",
-    "static/css/main.8a67c586.chunk.css.map": "/wild-covid/static/css/main.8a67c586.chunk.css.map",
-    "static/js/2.a1373370.chunk.js.LICENSE.txt": "/wild-covid/static/js/2.a1373370.chunk.js.LICENSE.txt",
-    "static/media/Be-Safe-Logo.28e11c0a.png": "/wild-covid/static/media/Be-Safe-Logo.28e11c0a.png",
-    "static/media/LogoBe.0c32757d.png": "/wild-covid/static/media/LogoBe.0c32757d.png",
-    "static/media/LogoBrusselsCovid.32d5af22.png": "/wild-covid/static/media/LogoBrusselsCovid.32d5af22.png",
-    "static/media/LogoSciensano.101d1ba6.png": "/wild-covid/static/media/LogoSciensano.101d1ba6.png"
+    "main.css": "/be-safe/static/css/main.099fbad2.chunk.css",
+    "main.js": "/be-safe/static/js/main.2dc558a1.chunk.js",
+    "main.js.map": "/be-safe/static/js/main.2dc558a1.chunk.js.map",
+    "runtime-main.js": "/be-safe/static/js/runtime-main.fbf9ef32.js",
+    "runtime-main.js.map": "/be-safe/static/js/runtime-main.fbf9ef32.js.map",
+    "static/css/2.23154d62.chunk.css": "/be-safe/static/css/2.23154d62.chunk.css",
+    "static/js/2.05649142.chunk.js": "/be-safe/static/js/2.05649142.chunk.js",
+    "static/js/2.05649142.chunk.js.map": "/be-safe/static/js/2.05649142.chunk.js.map",
+    "static/js/3.11d04eaf.chunk.js": "/be-safe/static/js/3.11d04eaf.chunk.js",
+    "static/js/3.11d04eaf.chunk.js.map": "/be-safe/static/js/3.11d04eaf.chunk.js.map",
+    "index.html": "/be-safe/index.html",
+    "static/css/2.23154d62.chunk.css.map": "/be-safe/static/css/2.23154d62.chunk.css.map",
+    "static/css/main.099fbad2.chunk.css.map": "/be-safe/static/css/main.099fbad2.chunk.css.map",
+    "static/js/2.05649142.chunk.js.LICENSE.txt": "/be-safe/static/js/2.05649142.chunk.js.LICENSE.txt",
+    "static/media/Be-Safe-Logo.28e11c0a.png": "/be-safe/static/media/Be-Safe-Logo.28e11c0a.png",
+    "static/media/LogoBe.0c32757d.png": "/be-safe/static/media/LogoBe.0c32757d.png",
+    "static/media/LogoBrusselsCovid.32d5af22.png": "/be-safe/static/media/LogoBrusselsCovid.32d5af22.png",
+    "static/media/LogoSciensano.101d1ba6.png": "/be-safe/static/media/LogoSciensano.101d1ba6.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.cfa95383.js",
+    "static/js/runtime-main.fbf9ef32.js",
     "static/css/2.23154d62.chunk.css",
-    "static/js/2.a1373370.chunk.js",
-    "static/css/main.8a67c586.chunk.css",
-    "static/js/main.a2554b90.chunk.js"
+    "static/js/2.05649142.chunk.js",
+    "static/css/main.099fbad2.chunk.css",
+    "static/js/main.2dc558a1.chunk.js"
   ]
 }
