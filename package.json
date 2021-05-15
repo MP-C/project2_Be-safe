@@ -1,5 +1,5 @@
 {
-  "name": "wild-covid",
+  "name": "be-safe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -56,5 +56,5 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1"
   },
-  "homepage": "https://xdewez.github.io/wild-covid"
+  "homepage": "https://paulinedero.github.io/be-safe/"
 }
