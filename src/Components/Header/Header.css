@@ -1,0 +1,57 @@
+.banner-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #A7C1CF;
+    width: 100%;
+}
+
+a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: rgb(96, 165, 187);
+}
+ 
+.logo-Be-Safe {
+    width: 150px;
+    height: 150px;
+}
+
+.header_text{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color:  #A7C1CF;  
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.headear_text_presentation{
+    color:white;
+    font-family: Helvetica ;
+}
+
+h1 {
+    text-align: center;
+}
+
+.info-button {
+    align-self: flex-start;
+}
+
+
+@media (max-width: 480px){
+   
+ .logo-Be-Safe{
+    width: 150px;
+    height: 150px;
+ } 
+
+ h1{
+     font-size: large;
+ }
+
+.header_intro{
+    display: flex;
+    flex-direction: column;
+ }
+}

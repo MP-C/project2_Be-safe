@@ -1,0 +1,107 @@
+/*
+general for all
+Footer Mario
+*/
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #A7C1CF;
+}
+
+/* .footer_generalInformations{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+} */
+
+.footer_contactsAndSites {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.footer_title {
+    color: rgb(6, 102, 140);
+}
+
+.titleContactList, .titleSitesInformations, .footer_titleImportantesConstacts {
+    color: rgb(6, 102, 140);
+}
+
+.footer_SitesInformations {
+    display: flex;
+    flex-direction: column;
+}
+
+.network_logos {
+    display: flex;
+    justify-content: center;
+}
+
+.logo_contact_be_belgium {
+    height: 80px;
+    border-radius: 5px;
+}
+
+.logo_contact_be_brussels {
+    height: 80px;
+    border-radius: 5px;
+}
+
+.logo_contact_be_Sciensano {
+    height: 80px;
+    border-radius: 5px;
+}
+
+.headear_text_identification {
+    text-align: center;
+    color: white;
+    font-family: Helvetica;
+    background-color: rgb(6, 102, 140);
+    margin: auto;
+    padding: 20px;
+}
+
+@media (max-width: 480px) {
+    .footer_contactsAndSites {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer_ImportantesConstacts {
+        text-align: center;
+    }
+    .footer_titleImportantesConstacts, .footer_title {
+        font-size: large;
+    }
+    .network_logos {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo_contact_be_belgium {
+        margin: 2rem;
+    }
+    .logo_contact_be_brussels {
+        margin: 2rem;
+    }
+    .logo_contact_be_Sciensano {
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer_contactsAndSites {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer_SitesInformations {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .logo_contact_be_belgium {}
+    .logo_contact_be_brussels {}
+    .logo_contact_be_Sciensano {}
+}

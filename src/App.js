@@ -1,12 +1,17 @@
-import './App.css';
-import Body from './components/Body/Body';
+import React from 'react';
 
-function App() {
+import Header from './Components/Header/Header';
+import Body from './Components/Body/Body';
+import Footer from './Components/Footer/Footer';
+
+import './App.css';
+
+export default function App() {
     return (
         <div className="App">
+            <Header />
             <Body />
+            <Footer />
         </div>
     );
 }
-
-export default App;
